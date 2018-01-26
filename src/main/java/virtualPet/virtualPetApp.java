@@ -34,27 +34,27 @@ public class virtualPetApp {
 
 			if (userResponse.equals("2")) {
 				pet.giveWater();
-				pet.checkStats(); 
+				pet.checkStats();
 			}
 
 			if (userResponse.equals("3")) {
 				pet.play();
-				pet.checkStats(); 
+				pet.checkStats();
 
 			}
 
 			if (userResponse.equals("4")) {
 				pet.cleanUp();
-				pet.checkStats(); 
+				pet.checkStats();
 
 			}
 
 			if (userResponse.equals("5")) {
-				pet.getStats();
-				pet.checkStats(); 
+				System.out.println(pet.getStats());
+
 			}
 			tick++;
-			pet.getStats(); 
+			pet.getStats();
 		}
 
 		System.out.println("End of day status:");

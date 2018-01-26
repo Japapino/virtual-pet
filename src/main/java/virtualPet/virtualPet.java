@@ -37,27 +37,31 @@ public class virtualPet {
 		boredom += 5;
 		thirst -= 1;
 		waste += 3;
+		this.checkStats();
 	}
 
 	public void giveTreat() {
 		thirst += 3;
-		hunger += 1;
+		hunger -= 1;
 		health -= 2;
 		waste += 5;
+		this.checkStats();
 	}
 
 	public void play() {
 		hunger += 10;
 		health += 5;
-		boredom -= 15;
+		boredom -= 10;
 		thirst += 10;
+		this.checkStats();
 	}
 
 	public void giveWater() {
 		hunger -= 3;
 		thirst -= 15;
-		boredom += 1;
+		boredom += 5;
 		waste += 3;
+		this.checkStats();
 	}
 
 	public void giveFood() {
@@ -65,15 +69,14 @@ public class virtualPet {
 		health -= 2;
 		thirst += 3;
 		waste += 5;
+		this.checkStats();
 	}
 
+	// getters
 	public int checkWaste() {
 		return waste / 10;
 	}
 
-	/*
-	 * public void virtualPet() { health = 100; hunger = 0; }
-	 */
 	public int getHealth() {
 		return health;
 	}
@@ -94,18 +97,15 @@ public class virtualPet {
 		return waste;
 	}
 
-	public void getStats() {
-		System.out.println("Your pet's current stats are: ");
-		System.out.println("Hunger: " + this.getHunger());
-		System.out.println("Health: " + this.getHealth());
-		System.out.println("Thirst: " + this.getThirst());
-		System.out.println("Waste: " + this.checkWaste());
-	}
-
 	public void cleanUp() {
-		// TODO Auto-generated method stub
-		waste -= 10;
-		boredom = +3;
-
+		waste -= 20;
+		boredom += 3;
+		
 	}
+	
+	public String getStats() {
+		return "Hunger: " +this.getHunger()+"\nHealth: "+this.getHealth()+"\nThirst: "+this.getThirst()+"\nWaste: "+this.checkWaste(); 
+		
+	}
+
 }
