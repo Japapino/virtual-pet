@@ -10,7 +10,6 @@ public class virtualPetTest {
 		Assert.assertEquals(100, health);
 		int hunger = underTest.getHunger();
 		Assert.assertEquals(0, hunger);
-		
 	}
 
 }
