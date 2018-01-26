@@ -18,7 +18,13 @@ public class virtualPetTest {
 		virtualPet underTest = new virtualPet();
 		underTest.play();
 		Assert.assertEquals(0, underTest.getBoredom());
-
+	}
+	
+	@Test
+	public void shouldAssignName() {
+		virtualPet underTest = new virtualPet(); 
+		underTest.setName("Billy"); 
+		Assert.assertEquals("Billy", underTest.getName());
 	}
 
 }

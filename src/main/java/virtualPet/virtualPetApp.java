@@ -9,8 +9,13 @@ public class virtualPetApp {
 		int tick = 0;
 		String userResponse = "";
 		System.out.println("Welcome to your all new virtual pet!");
-		System.out.println("Your pet's current stats are: ");
-		pet.getStats();
+		System.out.println("    /\\_____/\\\r\n" + "   /  o   o  \\\r\n" + "  ( ==  ^  == )\r\n" + "   )         (\r\n"
+				+ "  (           )\r\n" + " ( (  )   (  ) )\r\n" + "(__(__)___(__)__)");
+		System.out.println("What is his name?");
+		userResponse = input.nextLine();
+		pet.setName(userResponse);
+		System.out.println(pet.getName() + "'s stats are: ");
+		System.out.println(pet.getStats());
 
 		while (!userResponse.equalsIgnoreCase("quit")) {
 			System.out.println("Current tick: " + tick);
@@ -34,18 +39,18 @@ public class virtualPetApp {
 
 			if (userResponse.equals("2")) {
 				pet.giveWater();
-				pet.checkStats();
+				System.out.println(pet.getStats());
 			}
 
 			if (userResponse.equals("3")) {
 				pet.play();
-				pet.checkStats();
+				System.out.println(pet.getStats());
 
 			}
 
 			if (userResponse.equals("4")) {
 				pet.cleanUp();
-				pet.checkStats();
+				System.out.println(pet.getStats());
 
 			}
 
@@ -54,7 +59,6 @@ public class virtualPetApp {
 
 			}
 			tick++;
-			pet.getStats();
 		}
 
 		System.out.println("End of day status:");

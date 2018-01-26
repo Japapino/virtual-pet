@@ -9,10 +9,12 @@ public class virtualPet {
 	private int waste = 0;
 	String name;
 
+	// setters
 	public String setName(String nameInput) {
 		return name = nameInput;
 	}
 
+	// methods
 	public void checkStats() {
 		if (this.health > 100) {
 			this.health = 100;
@@ -33,7 +35,7 @@ public class virtualPet {
 
 	public void tickIncrease() {
 		health -= 1;
-		hunger += 1;
+		hunger += 2;
 		boredom += 5;
 		thirst -= 1;
 		waste += 3;
@@ -43,7 +45,7 @@ public class virtualPet {
 	public void giveTreat() {
 		thirst += 3;
 		hunger -= 1;
-		health -= 2;
+		health -= 3;
 		waste += 5;
 		this.checkStats();
 	}
@@ -58,7 +60,7 @@ public class virtualPet {
 
 	public void giveWater() {
 		hunger -= 3;
-		thirst -= 15;
+		thirst -= 10;
 		boredom += 5;
 		waste += 3;
 		this.checkStats();
@@ -72,9 +74,19 @@ public class virtualPet {
 		this.checkStats();
 	}
 
+	public void cleanUp() {
+		waste = 0;
+		boredom += 10;
+
+	}
+
 	// getters
+	public String getName() {
+		return this.name;
+	}
+
 	public int checkWaste() {
-		return waste / 10;
+		return waste;
 	}
 
 	public int getHealth() {
@@ -93,19 +105,10 @@ public class virtualPet {
 		return thirst;
 	}
 
-	public int getWaste() {
-		return waste;
-	}
-
-	public void cleanUp() {
-		waste -= 20;
-		boredom += 3;
-		
-	}
-	
 	public String getStats() {
-		return "Hunger: " +this.getHunger()+"\nHealth: "+this.getHealth()+"\nThirst: "+this.getThirst()+"\nWaste: "+this.checkWaste(); 
-		
+		return "Hunger: " + this.getHunger() + "\nHealth: " + this.getHealth() + "\nThirst: " + this.getThirst()
+				+ "\nWaste: " + this.checkWaste();
+
 	}
 
 }
