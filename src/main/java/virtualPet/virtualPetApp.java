@@ -58,7 +58,7 @@ public class virtualPetApp {
 				System.out.println(pet.getStats());
 
 			}
-			tick++;
+			pet.tickIncrease();
 		}
 
 		System.out.println("End of day status:");
