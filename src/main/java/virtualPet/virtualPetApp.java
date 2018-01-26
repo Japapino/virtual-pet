@@ -10,11 +10,13 @@ public class virtualPetApp {
 		String userResponse = "";
 		System.out.println("Welcome to your all new virtual pet!");
 		System.out.println("Your pet's current stats are: ");
+		pet.getStats();
 
 		while (!userResponse.equalsIgnoreCase("quit")) {
+			System.out.println("Current tick: " + tick);
 
 			System.out.println("What would you like to do? Your options are:"
-					+ "\n1. Feed \n2. Give water \n3. Play \n4.Clean Up \n5. Get Status");
+					+ "\n1. Feed \n2. Give water \n3. Play \n4. Clean Up \n5. Get Status");
 			userResponse = input.nextLine().toLowerCase();
 
 			if (userResponse.equals("1") || (userResponse.equals("feed"))) {
@@ -29,15 +31,36 @@ public class virtualPetApp {
 					pet.giveFood();
 				}
 			}
-			
+
+			if (userResponse.equals("2")) {
+				pet.giveWater();
+				pet.checkStats(); 
+			}
+
+			if (userResponse.equals("3")) {
+				pet.play();
+				pet.checkStats(); 
+
+			}
+
+			if (userResponse.equals("4")) {
+				pet.cleanUp();
+				pet.checkStats(); 
+
+			}
+
 			if (userResponse.equals("5")) {
 				pet.getStats();
+				pet.checkStats(); 
 			}
-			
-			
-			
-
+			tick++;
+			pet.getStats(); 
 		}
+
+		System.out.println("End of day status:");
+		pet.getStats();
+		System.out.println("Good bye forever.");
+		System.exit(0);
 
 	}
 }
