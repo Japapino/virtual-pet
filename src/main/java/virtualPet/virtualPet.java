@@ -37,7 +37,7 @@ public class virtualPet {
 		health -= 1;
 		hunger += 2;
 		boredom += 5;
-		thirst -= 1;
+		thirst += 1;
 		waste += 3;
 		this.checkStats();
 	}

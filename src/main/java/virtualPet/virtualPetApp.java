@@ -62,7 +62,7 @@ public class virtualPetApp {
 		}
 
 		System.out.println("End of day status:");
-		pet.getStats();
+		System.out.println(pet.getStats());
 		System.out.println("Good bye forever.");
 		System.exit(0);
 

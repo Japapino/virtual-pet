@@ -33,16 +33,16 @@ public class virtualPetTest {
 		underTest.giveTreat();
 		Assert.assertEquals(5, underTest.checkWaste());
 	}
-	
+
 	@Test
 	public void tickShouldChangeStats() {
-		virtualPet underTest = new virtualPet(); 
-		underTest.tickIncrease(); 
-		Assert.assertEquals(99,underTest.getHealth());
-		Assert.assertEquals(2,underTest.getHunger());
-		Assert.assertEquals(5,underTest.getBoredom());
-		Assert.assertEquals(0,underTest.getThirst());
-		Assert.assertEquals(3,underTest.checkWaste());
+		virtualPet underTest = new virtualPet();
+		underTest.tickIncrease();
+		Assert.assertEquals(99, underTest.getHealth());
+		Assert.assertEquals(2, underTest.getHunger());
+		Assert.assertEquals(5, underTest.getBoredom());
+		Assert.assertEquals(0, underTest.getThirst());
+		Assert.assertEquals(3, underTest.checkWaste());
 	}
 
 }
